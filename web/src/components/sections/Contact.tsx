@@ -58,7 +58,7 @@ export function Contact() {
       <SectionHeader
         label="Connect"
         title="Let's build something impactful together"
-        description="Open to Backend Developer Intern opportunities. I typically respond within 48 hours."
+        description="Backend Developer Intern — open to opportunities."
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
