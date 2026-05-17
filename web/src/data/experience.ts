@@ -10,50 +10,41 @@ export type TimelineItem = {
 
 export const careerTimeline: TimelineItem[] = [
   {
-    year: '2021',
+    year: '2023',
     title: profile.universityShort,
     subtitle: profile.major,
-    description: `Began ${profile.degree} at ${profile.universityEn}.`,
+    description: `Started ${profile.degree} at ${profile.universityEn}.`,
     type: 'education',
   },
   {
-    year: '2022',
+    year: '2024',
     title: 'IT Foundation',
     subtitle: 'Core CS fundamentals',
     description: 'OOP, data structures, and programming discipline through coursework at UTH.',
     type: 'education',
   },
   {
-    year: '2023',
+    year: '2025',
     title: 'Backend Focus',
     subtitle: 'Java & Spring Boot',
     description: 'Server-side development, REST APIs, and relational database design.',
     type: 'learning',
   },
   {
-    year: '2024',
+    year: '2026',
     title: 'Production-Style Projects',
     subtitle: 'Auth, APIs, real-time',
     description: 'Built features with measurable performance and security requirements.',
     type: 'project',
   },
-  {
-    year: '2025',
-    title: 'Internship Ready',
-    subtitle: 'Backend Developer Intern',
-    description: 'Targeting backend intern roles with scalable services and clean architecture.',
-    type: 'cert',
-  },
 ]
 
 export const education = {
-  degree: 'Cử nhân Công nghệ Thông tin',
-  degreeEn: 'Bachelor of Information Technology',
+  degree: profile.degree,
   institution: profile.university,
-  institutionShort: profile.universityShort,
   institutionEn: profile.universityEn,
   logo: `${import.meta.env.BASE_URL}images/uth-logo.png`,
-  period: '2021 — Present',
+  period: `${profile.studyStartYear} — Present`,
   focus: 'Software Engineering · Backend Systems',
 }
 

@@ -53,12 +53,11 @@ export function Hero() {
           </Button>
         </div>
 
-        <p className="font-mono text-sm text-on-surface-variant leading-relaxed max-w-lg">
-          <Terminal size={16} className="text-primary-container shrink-0 inline mr-2 align-text-bottom" />
-          {profile.major} · {profile.universityShort}
-        </p>
-        <p className="text-sm text-on-surface-variant/90 max-w-lg leading-snug">
-          {profile.university}
+        <p className="flex items-center gap-2 font-mono text-sm text-on-surface-variant max-w-lg">
+          <Terminal size={16} className="text-primary-container shrink-0" />
+          <span>
+            {profile.major} · Focused on APIs, databases &amp; scalable architecture
+          </span>
         </p>
       </motion.div>
 

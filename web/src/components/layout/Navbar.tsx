@@ -4,11 +4,7 @@ import { profile } from '../../data/profile'
 import { navLinks } from '../../data/navigation'
 import { Button } from '../ui/Button'
 
-type NavbarProps = {
-  onOpenCommand: () => void
-}
-
-export function Navbar({ onOpenCommand }: NavbarProps) {
+export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -41,13 +37,6 @@ export function Navbar({ onOpenCommand }: NavbarProps) {
               {link.label}
             </a>
           ))}
-          <button
-            type="button"
-            onClick={onOpenCommand}
-            className="hidden lg:inline-flex font-mono text-xs text-on-surface-variant border border-outline-variant/30 rounded px-2 py-1 hover:border-primary-container/50"
-          >
-            ⌘K
-          </button>
         </nav>
 
         <div className="flex items-center gap-3">
