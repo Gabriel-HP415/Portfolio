@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Experience &amp; Education - Backend Portfolio</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#414658",
+                    "on-tertiary": "#2a3040",
+                    "error": "#ffb4ab",
+                    "inverse-surface": "#d4e4fa",
+                    "on-tertiary-container": "#4e5465",
+                    "on-background": "#d4e4fa",
+                    "surface-container": "#122131",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#e8ddff",
+                    "on-secondary-container": "#bea8ff",
+                    "on-primary-container": "#005b78",
+                    "on-surface": "#d4e4fa",
+                    "tertiary": "#dfe4fa",
+                    "primary-container": "#7dd3fc",
+                    "on-secondary": "#381385",
+                    "on-error": "#690005",
+                    "primary": "#c5eaff",
+                    "on-secondary-fixed": "#21005e",
+                    "on-primary-fixed": "#001e2b",
+                    "primary-fixed": "#c0e8ff",
+                    "surface-container-highest": "#273647",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#0d1c2d",
+                    "on-tertiary-fixed": "#151b2b",
+                    "outline-variant": "#3f484e",
+                    "on-secondary-fixed-variant": "#4f319c",
+                    "surface-bright": "#2c3a4c",
+                    "surface-dim": "#051424",
+                    "surface-container-lowest": "#010f1f",
+                    "outline": "#899298",
+                    "surface-variant": "#273647",
+                    "on-primary-fixed-variant": "#004d66",
+                    "primary-fixed-dim": "#7bd1fa",
+                    "tertiary-fixed": "#dde2f8",
+                    "secondary-fixed-dim": "#cebdff",
+                    "on-primary": "#003547",
+                    "surface-container-high": "#1c2b3c",
+                    "tertiary-container": "#c3c8dd",
+                    "background": "#051424",
+                    "tertiary-fixed-dim": "#c1c6db",
+                    "surface-tint": "#7bd1fa",
+                    "inverse-primary": "#006686",
+                    "secondary": "#cebdff",
+                    "surface": "#051424",
+                    "secondary-container": "#4f319c",
+                    "on-surface-variant": "#bec8ce",
+                    "inverse-on-surface": "#233143"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "gutter": "24px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "code-sm": ["JetBrains Mono"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom glow effect for high-end feel */
+        .ambient-glow {
+            background: radial-gradient(circle at top center, rgba(125, 211, 252, 0.05) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col relative selection:bg-primary-container/30 selection:text-primary-container">
+<!-- Ambient Background Light -->
+<div class="fixed inset-0 pointer-events-none ambient-glow z-0"></div>
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-md h-16 transition-all duration-300 ease-in-out">
+<div class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+                BACKEND_PORTFOLIO
+            </div>
+<nav class="hidden md:flex items-center gap-md font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 hover:bg-surface-variant/20 px-3 py-2 rounded-md" href="#">Capabilities</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 hover:bg-surface-variant/20 px-3 py-2 rounded-md" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 hover:bg-surface-variant/20 px-3 py-2 rounded-md" href="#">Approach</a>
+<a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 transition-colors duration-300" href="#">Experience</a>
+</nav>
+<button class="font-body-md text-body-md text-primary-container bg-surface border border-primary-container/20 hover:bg-primary-container/10 px-4 py-2 rounded-DEFAULT transition-all duration-300 flex items-center gap-2">
+                Connect
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-md pt-32 pb-xl z-10 flex flex-col gap-xl">
+<!-- Hero Section -->
+<section class="max-w-3xl">
+<h1 class="font-display text-display text-on-surface mb-md">Trajectory.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A chronological mapping of professional experience, academic foundations, and specialized technical focus. Built on principles of robust architecture and continuous learning.
+            </p>
+</section>
+<!-- Experience Timeline -->
+<section>
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary-container">work</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Experience</h2>
+</div>
+<div class="relative pl-sm md:pl-md border-l border-outline-variant/20 flex flex-col gap-lg">
+<!-- Timeline Item 1 -->
+<div class="relative pl-lg group">
+<div class="absolute left-[-5px] top-2 w-[9px] h-[9px] rounded-full bg-surface border-2 border-primary-container group-hover:bg-primary-container transition-colors duration-300"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-xs md:gap-md mb-2">
+<h3 class="font-headline-md text-[24px] font-semibold text-on-surface">Backend Systems Intern</h3>
+<span class="font-code-sm text-code-sm text-primary-container">CloudTech Solutions</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-widest">June 2023 - Present</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                        Designed and implemented scalable microservices using Go and gRPC. Optimized database queries reducing latency by 30% for high-throughput transactional APIs. Participated in architectural reviews for upcoming distributed caching layers.
+                    </p>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative pl-lg group">
+<div class="absolute left-[-5px] top-2 w-[9px] h-[9px] rounded-full bg-surface border-2 border-outline-variant group-hover:border-primary-container transition-colors duration-300"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-xs md:gap-md mb-2">
+<h3 class="font-headline-md text-[24px] font-semibold text-on-surface">Self-Directed Study: Distributed Systems</h3>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Independent</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-widest">Jan 2023 - May 2023</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                        Deep dive into distributed consensus algorithms (Raft, Paxos). Built a custom key-value store emphasizing fault tolerance and eventually consistent replication across multiple local nodes.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Education Timeline -->
+<section>
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary-container">school</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Education</h2>
+</div>
+<div class="relative pl-sm md:pl-md border-l border-outline-variant/20 flex flex-col gap-lg">
+<!-- Timeline Item 1 -->
+<div class="relative pl-lg group">
+<div class="absolute left-[-5px] top-2 w-[9px] h-[9px] rounded-full bg-surface border-2 border-primary-container group-hover:bg-primary-container transition-colors duration-300"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-xs md:gap-md mb-2">
+<h3 class="font-headline-md text-[24px] font-semibold text-on-surface">B.S. Information Technology</h3>
+<span class="font-code-sm text-code-sm text-primary-container">State University</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-widest">Expected Graduation: May 2024</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                        Major focus on systems architecture, database design, and network security. Consistently recognized on the Dean's List for academic excellence in technical core modules.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Coursework Chips -->
+<section class="bg-surface-container/30 border border-outline-variant/10 rounded-xl p-lg backdrop-blur-sm">
+<h2 class="font-code-sm text-code-sm text-on-surface-variant mb-md uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">integration_instructions</span>
+                Relevant Coursework
+            </h2>
+<div class="flex flex-wrap gap-sm">
+<span class="px-4 py-2 bg-secondary-fixed/5 border border-secondary-fixed/20 text-secondary-fixed rounded-full font-code-sm text-code-sm hover:bg-secondary-fixed/10 transition-colors duration-200">Object-Oriented Programming</span>
+<span class="px-4 py-2 bg-secondary-fixed/5 border border-secondary-fixed/20 text-secondary-fixed rounded-full font-code-sm text-code-sm hover:bg-secondary-fixed/10 transition-colors duration-200">Relational Databases</span>
+<span class="px-4 py-2 bg-secondary-fixed/5 border border-secondary-fixed/20 text-secondary-fixed rounded-full font-code-sm text-code-sm hover:bg-secondary-fixed/10 transition-colors duration-200">Computer Networks</span>
+<span class="px-4 py-2 bg-secondary-fixed/5 border border-secondary-fixed/20 text-secondary-fixed rounded-full font-code-sm text-code-sm hover:bg-secondary-fixed/10 transition-colors duration-200">Information Security</span>
+<span class="px-4 py-2 bg-secondary-fixed/5 border border-secondary-fixed/20 text-secondary-fixed rounded-full font-code-sm text-code-sm hover:bg-secondary-fixed/10 transition-colors duration-200">Data Structures &amp; Algorithms</span>
+<span class="px-4 py-2 bg-secondary-fixed/5 border border-secondary-fixed/20 text-secondary-fixed rounded-full font-code-sm text-code-sm hover:bg-secondary-fixed/10 transition-colors duration-200">Operating Systems</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant/10 w-full py-xl z-10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-md gap-md">
+<div class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">
+                © 2024 Backend Systems Engineer. Built with Precision.
+            </div>
+<nav class="flex items-center gap-md font-code-sm text-code-sm">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">Documentation</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">Architecture</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">LinkedIn</a>
+</nav>
+</div>
+</footer>
+</body></html>

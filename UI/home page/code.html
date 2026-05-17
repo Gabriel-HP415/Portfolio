@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nong Hung Phi | Backend Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#4f319c",
+                      "outline": "#899298",
+                      "surface-dim": "#051424",
+                      "surface-bright": "#2c3a4c",
+                      "inverse-surface": "#d4e4fa",
+                      "on-primary": "#003547",
+                      "tertiary-container": "#c3c8dd",
+                      "on-tertiary": "#2a3040",
+                      "on-background": "#d4e4fa",
+                      "surface-container-low": "#0d1c2d",
+                      "on-tertiary-fixed-variant": "#414658",
+                      "background": "#051424",
+                      "surface-variant": "#273647",
+                      "primary-fixed": "#c0e8ff",
+                      "on-tertiary-container": "#4e5465",
+                      "on-surface-variant": "#bec8ce",
+                      "surface-container-lowest": "#010f1f",
+                      "outline-variant": "#3f484e",
+                      "on-secondary-container": "#bea8ff",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#c1c6db",
+                      "tertiary-fixed": "#dde2f8",
+                      "primary-fixed-dim": "#7bd1fa",
+                      "on-tertiary-fixed": "#151b2b",
+                      "secondary-fixed": "#e8ddff",
+                      "secondary-fixed-dim": "#cebdff",
+                      "on-surface": "#d4e4fa",
+                      "primary-container": "#7dd3fc",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#006686",
+                      "on-primary-fixed": "#001e2b",
+                      "surface-tint": "#7bd1fa",
+                      "on-error": "#690005",
+                      "on-secondary": "#381385",
+                      "surface": "#051424",
+                      "on-secondary-fixed": "#21005e",
+                      "on-primary-fixed-variant": "#004d66",
+                      "error-container": "#93000a",
+                      "surface-container": "#122131",
+                      "on-primary-container": "#005b78",
+                      "primary": "#c5eaff",
+                      "surface-container-highest": "#273647",
+                      "secondary": "#cebdff",
+                      "tertiary": "#dfe4fa",
+                      "on-secondary-fixed-variant": "#4f319c",
+                      "inverse-on-surface": "#233143",
+                      "surface-container-high": "#1c2b3c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "xl": "80px",
+                      "lg": "48px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Space Grotesk"],
+                      "code-sm": ["JetBrains Mono"],
+                      "headline-md": ["Space Grotesk"],
+                      "display": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+        .noise-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .glow-radial {
+            background: radial-gradient(circle at top right, rgba(125, 211, 252, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(79, 49, 156, 0.1), transparent 40%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-container/30 selection:text-primary-container">
+<!-- Ambient Background Effects -->
+<div class="fixed inset-0 z-0 pointer-events-none glow-radial"></div>
+<div class="fixed inset-0 z-0 pointer-events-none noise-bg"></div>
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-md h-16">
+<div class="font-label-caps text-label-caps text-on-surface tracking-widest">
+                BACKEND_PORTFOLIO
+            </div>
+<ul class="hidden md:flex gap-lg items-center">
+<li><a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 transition-all duration-300 ease-in-out" href="#">Capabilities</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 hover:bg-surface-variant/20 px-sm py-xs rounded" href="#">Projects</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 hover:bg-surface-variant/20 px-sm py-xs rounded" href="#">Approach</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 hover:bg-surface-variant/20 px-sm py-xs rounded" href="#">Experience</a></li>
+</ul>
+<button class="hidden md:inline-flex items-center justify-center px-sm py-xs rounded bg-primary-container text-on-primary-container font-body-md text-body-md hover:brightness-110 transition-all">
+                Connect
+            </button>
+<button class="md:hidden text-on-surface p-xs">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-container-max mx-auto px-md md:px-lg pt-32 pb-xl">
+<!-- Hero Section -->
+<section class="flex flex-col lg:flex-row items-center gap-xl min-h-[819px] py-xl">
+<div class="w-full lg:w-1/2 flex flex-col items-start gap-md">
+<span class="font-label-caps text-label-caps text-secondary px-sm py-xs border border-secondary/20 rounded-full bg-secondary/10">Backend Engineer Portfolio</span>
+<h1 class="font-display text-headline-lg-mobile md:text-display text-on-surface leading-tight">
+                    Nong Hung Phi
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg border-l-2 border-primary-container pl-sm">
+                    Backend Developer Intern. Building scalable backend systems and solving real-world problems through clean architecture.
+                </p>
+<div class="flex flex-wrap gap-sm mt-sm">
+<button class="bg-primary-container text-on-primary-container font-body-md text-body-md px-md py-sm rounded shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:brightness-110 transition-all">
+                        View Projects
+                    </button>
+<button class="border border-outline-variant/50 text-on-surface font-body-md text-body-md px-md py-sm rounded hover:bg-surface-variant/30 transition-all">
+                        Download Resume
+                    </button>
+</div>
+<p class="font-code-sm text-code-sm text-outline mt-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+                    Focused on backend systems, APIs, databases, and scalable architecture.
+                </p>
+</div>
+<div class="w-full lg:w-1/2 h-[400px] lg:h-[600px] rounded-xl border border-outline-variant/20 bg-surface-container relative overflow-hidden flex items-center justify-center">
+<!-- Abstract 3D/Tech visual placeholder -->
+<img alt="Abstract tech visual" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" data-alt="A highly detailed, cinematic 3D rendering of an abstract backend server architecture. Glowing interconnected nodes and sleek, dark translucent glass elements float in a deep space environment. The lighting is soft and dramatic, utilizing a deep tech palette of dark navy, deep blacks, and striking cyan and violet neon accents. The mood is sophisticated, technical, and authoritative, matching a premium developer portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaFqDh_MG1bxqSSYbqLIAVETBhG85-GAI4UkHjy5v0XDC56YUIasLD_p9pTOYSiEt9lMEATpIYWDFTFpSwzri094sFJPE6G7wAleV0BebEuCqr-5fBzp8KddLm8fKCW2x79oU63U3GL3JIUzkUypRXuMjFoH0c6FVFIvn-VpIfdqtbsb5Gl33lr0_H6bTbUIkCOIz_Ue8CecwzB8DSIq5Wa2nxPXLMHBya_M6n4YXXql4cTxIYFdwfPROYi3PgN-Tr9wVmvOJP4uiC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-32 h-32 rounded-full border border-primary-container/30 bg-surface/50 backdrop-blur-md flex items-center justify-center shadow-[0_0_40px_rgba(125,211,252,0.1)]">
+<span class="material-symbols-outlined text-4xl text-primary-container">dns</span>
+</div>
+<div class="flex gap-4 mt-8 opacity-50">
+<div class="w-16 h-1 bg-gradient-to-r from-transparent to-primary-container rounded"></div>
+<div class="w-16 h-1 bg-gradient-to-l from-transparent to-secondary rounded"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- About (Editorial) Section -->
+<section class="py-xl border-t border-outline-variant/10">
+<div class="max-w-3xl mx-auto text-center">
+<span class="material-symbols-outlined text-4xl text-secondary/50 mb-sm">format_quote</span>
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-on-surface mb-lg">
+                    "I enjoy building systems that remain clean, reliable, and maintainable as they scale."
+                </h2>
+<div class="font-body-lg text-body-lg text-on-surface-variant space-y-md text-left">
+<p>
+                        My journey in software engineering is driven by a fascination with the unseen mechanisms that power modern applications. As a Backend Developer Intern, I focus on constructing robust APIs and designing efficient database schemas that form the resilient core of any digital product.
+                    </p>
+<p>
+                        I approach problem-solving with a methodical mindset, emphasizing clean architecture principles to ensure that complexity doesn't compromise maintainability. Learning and adapting to new paradigms is a constant in my engineering process.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Engineering Capabilities Section -->
+<section class="py-xl border-t border-outline-variant/10">
+<div class="flex flex-col gap-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-container">memory</span>
+                    Engineering Capabilities
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Category Card -->
+<div class="bg-surface-container-low border border-outline-variant/10 rounded-lg p-md hover:border-outline-variant/30 transition-colors">
+<h3 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Backend &amp; API</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">Java</span>
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">Spring Boot</span>
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">REST APIs</span>
+</div>
+</div>
+<!-- Category Card -->
+<div class="bg-surface-container-low border border-outline-variant/10 rounded-lg p-md hover:border-outline-variant/30 transition-colors">
+<h3 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Data &amp; Storage</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">MySQL</span>
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">Database Design</span>
+</div>
+</div>
+<!-- Category Card -->
+<div class="bg-surface-container-low border border-outline-variant/10 rounded-lg p-md hover:border-outline-variant/30 transition-colors">
+<h3 class="font-label-caps text-label-caps text-secondary mb-sm uppercase">Architecture &amp; Ops</h3>
+<div class="flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">Clean Architecture</span>
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">Networking</span>
+<span class="px-sm py-xs bg-surface-variant text-on-surface-variant rounded-full font-code-sm text-code-sm border border-outline-variant/20">Security</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface w-full py-xl border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-md gap-md">
+<div class="font-label-caps text-label-caps text-on-surface">
+                © 2024 Backend Systems Engineer. Built with Precision.
+            </div>
+<ul class="flex flex-wrap gap-md justify-center">
+<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-container transition-colors" href="#">Documentation</a></li>
+<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-container transition-colors" href="#">Architecture</a></li>
+<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-container transition-colors" href="#">GitHub</a></li>
+<li><a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary-container transition-colors" href="#">LinkedIn</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

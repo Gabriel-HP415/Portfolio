@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        VITE_WEB3FORMS_ACCESS_KEY: ${VITE_WEB3FORMS_ACCESS_KEY:-}
+    image: nhp-portfolio:latest
+    container_name: nhp-portfolio
+    ports:
+      - "8080:80"
+    restart: unless-stopped
