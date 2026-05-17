@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d1c2d"/>
+  <rect x="420" y="80" width="360" height="470" rx="36" fill="#122131" stroke="#7dd3fc" stroke-opacity="0.35"/>
+  <rect x="460" y="200" width="280" height="24" rx="12" fill="#7dd3fc" fill-opacity="0.5"/>
+  <rect x="460" y="260" width="200" height="16" rx="8" fill="#273647"/>
+  <rect x="460" y="300" width="240" height="16" rx="8" fill="#273647"/>
+  <circle cx="600" cy="420" r="60" fill="none" stroke="#7dd3fc" stroke-width="8" stroke-dasharray="280" stroke-dashoffset="80"/>
+  <text x="600" y="160" text-anchor="middle" fill="#7dd3fc" font-size="48">=§</text>
+  <text x="600" y="560" text-anchor="middle" fill="#bec8ce" font-family="monospace" font-size="28">HydroMate · Android</text>
+</svg>

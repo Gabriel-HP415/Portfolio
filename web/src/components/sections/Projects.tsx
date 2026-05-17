@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import { useState } from 'react'
-import realtimeChatThumb from '../../assets/projects/realtime-chat.svg'
 import { projects, type Project } from '../../data/projects'
 import { ProjectModal } from '../features/ProjectModal'
 import { SectionHeader } from '../ui/SectionHeader'
@@ -33,11 +32,6 @@ export function Projects() {
                 src={project.thumbnail}
                 alt={project.title}
                 loading="lazy"
-                onError={(e) => {
-                  if (project.id === 'realtime-chat') {
-                    e.currentTarget.src = realtimeChatThumb
-                  }
-                }}
                 className="h-full w-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent" />
@@ -67,9 +61,12 @@ export function Projects() {
                 {project.demo && (
                   <a
                     href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg border border-outline-variant/40 px-4 py-2 text-sm hover:border-primary-container/50 transition-colors"
                   >
-                    <ExternalLink size={16} /> Live Demo
+                    <ExternalLink size={16} />
+                    {project.demo.includes('figma.com') ? 'Figma' : 'Live Demo'}
                   </a>
                 )}
                 <button

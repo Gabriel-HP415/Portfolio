@@ -1,12 +1,16 @@
 import { motion } from 'framer-motion'
+import { useMemo } from 'react'
 import { profile } from '../../data/profile'
 import { SectionHeader } from '../ui/SectionHeader'
 
-// Mock contribution grid — replace with GitHub API or github-readme-streak
+/** ~40% of cells active (60% fewer than uniform random) — stable per page load */
 function generateGrid() {
-  const levels = [0, 1, 2, 3, 4]
+  const activeChance = 0.4
   return Array.from({ length: 52 }, () =>
-    Array.from({ length: 7 }, () => levels[Math.floor(Math.random() * levels.length)]),
+    Array.from({ length: 7 }, () => {
+      if (Math.random() > activeChance) return 0
+      return 1 + Math.floor(Math.random() * 2)
+    }),
   )
 }
 
@@ -19,7 +23,7 @@ const LEVEL_COLORS = [
 ]
 
 export function GitHubActivity() {
-  const grid = generateGrid()
+  const grid = useMemo(() => generateGrid(), [])
 
   return (
     <section id="github" className="section-padding">
@@ -35,7 +39,7 @@ export function GitHubActivity() {
         viewport={{ once: true }}
         className="glass rounded-xl p-6 overflow-x-auto"
       >
-        <div className="flex gap-1 min-w-max">
+        <div className="flex gap-1 min-w-max" role="img" aria-label="GitHub contribution activity (illustrative)">
           {grid.map((week, wi) => (
             <div key={wi} className="flex flex-col gap-1">
               {week.map((level, di) => (

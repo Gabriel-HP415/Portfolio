@@ -6,8 +6,8 @@ const LINES = [
   '→ nong-hung-phi',
   '$ cat role.txt',
   '→ Backend Developer Intern',
-  '$ skills --list --top 3',
-  '→ Java · Spring Boot · MySQL',
+  '$ skills --list --top 4',
+  '→ Java · Python · C++ · MySQL',
   '$ open projects --featured',
   '→ Loading case studies... ✓',
 ]

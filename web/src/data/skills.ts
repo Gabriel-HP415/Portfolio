@@ -12,9 +12,9 @@ export const skillGroups: SkillGroup[] = [
     icon: 'server',
     skills: [
       { name: 'Java', level: 85 },
+      { name: 'Python', level: 82 },
+      { name: 'C++', level: 78 },
       { name: 'OOP', level: 88 },
-      { name: 'Spring Boot', level: 75 },
-      { name: 'REST APIs', level: 80 },
     ],
   },
   {
@@ -57,7 +57,8 @@ export const skillGroups: SkillGroup[] = [
 
 export const marqueeTech = [
   'Java',
-  'Spring Boot',
+  'Python',
+  'C++',
   'MySQL',
   'React',
   'REST',
