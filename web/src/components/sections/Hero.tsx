@@ -4,6 +4,8 @@ import { profile } from '../../data/profile'
 import { useTypingEffect } from '../../hooks/useTypingEffect'
 import { Button } from '../ui/Button'
 
+const longestPhrase = profile.typingPhrases.reduce((a, b) => (a.length >= b.length ? a : b))
+
 export function Hero() {
   const typed = useTypingEffect(profile.typingPhrases)
 
@@ -27,11 +29,19 @@ export function Hero() {
           {profile.role}
         </p>
 
-        <p className="max-w-lg border-l-2 border-primary-container pl-4 text-lg text-on-surface-variant">
-          <span className="font-mono text-primary-container">{'>'} </span>
-          {typed}
-          <span className="animate-pulse text-primary-container">|</span>
-        </p>
+        <div className="relative max-w-lg w-full border-l-2 border-primary-container pl-4 min-h-[5.5rem] sm:min-h-[3.25rem]">
+          <p
+            className="text-lg leading-snug text-on-surface-variant invisible select-none pointer-events-none"
+            aria-hidden="true"
+          >
+            {longestPhrase}
+          </p>
+          <p className="absolute top-0 left-0 pl-4 text-lg leading-snug text-on-surface-variant">
+            <span className="font-mono text-primary-container">{'>'} </span>
+            <span>{typed}</span>
+            <span className="animate-pulse text-primary-container">|</span>
+          </p>
+        </div>
 
         <div className="flex flex-wrap gap-3">
           <Button href="#projects">View Projects</Button>
@@ -44,8 +54,8 @@ export function Hero() {
         </div>
 
         <p className="flex items-center gap-2 font-mono text-sm text-on-surface-variant">
-          <Terminal size={16} className="text-primary-container" />
-          {profile.major} · Focused on APIs, databases & scalable architecture
+          <Terminal size={16} className="text-primary-container shrink-0" />
+          {profile.major}
         </p>
       </motion.div>
 
@@ -69,7 +79,6 @@ export function Hero() {
             <div className="h-1 w-16 rounded bg-gradient-to-r from-transparent to-primary-container" />
             <div className="h-1 w-16 rounded bg-gradient-to-l from-transparent to-secondary" />
           </div>
-          <p className="font-mono text-xs text-on-surface-variant">systems.online — status: learning</p>
         </div>
       </motion.div>
     </section>

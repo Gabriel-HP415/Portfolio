@@ -31,7 +31,8 @@ export function Projects() {
               <img
                 src={project.thumbnail}
                 alt={project.title}
-                className="h-full w-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                className="h-full w-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent" />
             </div>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0d1c2d"/>
+  <rect x="40" y="60" width="320" height="200" rx="12" fill="#122131" stroke="#7dd3fc" stroke-opacity="0.3"/>
+  <rect x="80" y="100" width="180" height="24" rx="6" fill="#7dd3fc" fill-opacity="0.2"/>
+  <rect x="80" y="140" width="140" height="24" rx="6" fill="#cebdff" fill-opacity="0.15"/>
+  <rect x="120" y="180" width="200" height="24" rx="6" fill="#7dd3fc" fill-opacity="0.25"/>
+  <rect x="440" y="120" width="320" height="240" rx="12" fill="#122131" stroke="#cebdff" stroke-opacity="0.25"/>
+  <circle cx="520" cy="200" r="8" fill="#7dd3fc"/>
+  <path d="M520 220 L500 260 L540 240 Z" fill="#7dd3fc" fill-opacity="0.6"/>
+  <text x="400" y="400" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="20" opacity="0.8">WebSocket · Real-time</text>
+</svg>

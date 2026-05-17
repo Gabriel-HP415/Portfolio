@@ -55,8 +55,7 @@ export const projects: Project[] = [
   {
     id: 'realtime-chat',
     title: 'Real-Time Messaging API',
-    thumbnail:
-      'https://images.unsplash.com/photo-1611162617474-5b21e939e113?w=800&q=80',
+    thumbnail: `${import.meta.env.BASE_URL}images/projects/realtime-chat.svg`,
     stack: ['Spring Boot', 'WebSocket', 'MySQL'],
     github: 'https://github.com/Gabriel-HP415',
     impact: 'Delivered sub-200ms message delivery for 50 concurrent WebSocket sessions.',

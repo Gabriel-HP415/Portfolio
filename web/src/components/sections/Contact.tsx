@@ -31,7 +31,6 @@ export function Contact() {
       message: String(formData.get('message') ?? '').trim(),
     }
 
-    // Không cần key: mở Gmail/Outlook với nội dung đã điền sẵn
     if (!useApi) {
       try {
         openMailtoContact(payload)
@@ -39,7 +38,7 @@ export function Contact() {
         form.reset()
       } catch {
         setStatus('error')
-        setErrorMessage(`Mở email thất bại. Gửi trực tiếp tới ${contactFallbackEmail}`)
+        setErrorMessage(`Could not open email. Contact ${contactFallbackEmail}`)
       }
       return
     }
@@ -50,7 +49,7 @@ export function Contact() {
       form.reset()
     } catch {
       setStatus('error')
-      setErrorMessage(`Không gửi được. Thử lại hoặc gửi tới ${contactFallbackEmail}`)
+      setErrorMessage(`Send failed. Try ${contactFallbackEmail}`)
     }
   }
 
@@ -70,14 +69,6 @@ export function Contact() {
           onSubmit={handleSubmit}
           className="glass rounded-xl p-8 space-y-5"
         >
-          {!useApi && (
-            <p className="text-sm text-on-surface-variant border border-outline-variant/20 rounded-lg px-4 py-3 bg-surface-container-low/50">
-              Không cần API key — bấm gửi sẽ mở <strong className="text-on-surface">Gmail</strong>{' '}
-              với nội dung sẵn. Bạn chỉ cần bấm <strong className="text-on-surface">Gửi</strong>{' '}
-              trong app email.
-            </p>
-          )}
-
           <div>
             <label htmlFor="contact-name" className="text-label-caps text-on-surface-variant block mb-2">
               Name
@@ -88,7 +79,7 @@ export function Contact() {
               required
               disabled={status === 'loading'}
               type="text"
-              placeholder="Recruiter name"
+              placeholder="Your name"
               className="w-full rounded-lg border border-outline-variant/30 bg-surface-container-lowest px-4 py-3 text-on-surface placeholder:font-mono placeholder:text-sm focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container disabled:opacity-60"
             />
           </div>
@@ -124,9 +115,7 @@ export function Contact() {
           {status === 'success' && (
             <p className="flex items-center gap-2 text-sm text-primary-container">
               <CheckCircle2 size={18} />
-              {useApi
-                ? "Message sent! I'll reply to your email soon."
-                : 'Đã mở app email — hãy bấm Gửi trong Gmail để hoàn tất.'}
+              {useApi ? "Message sent — I'll reply soon." : 'Email opened — press Send to deliver.'}
             </p>
           )}
           {status === 'error' && (
@@ -147,11 +136,11 @@ export function Contact() {
               </>
             ) : status === 'success' ? (
               <>
-                <CheckCircle2 size={18} /> {useApi ? 'Sent' : 'Opened email'}
+                <CheckCircle2 size={18} /> Done
               </>
             ) : (
               <>
-                <Send size={18} /> {useApi ? 'Send message' : 'Open in Gmail'}
+                <Send size={18} /> Send message
               </>
             )}
           </button>
@@ -164,7 +153,6 @@ export function Contact() {
           className="flex flex-col justify-center gap-6"
         >
           <p className="text-lg text-on-surface-variant">
-            Prefer direct contact? Reach me at{' '}
             <a href={profile.social.email} className="text-primary-container hover:underline">
               {profile.email}
             </a>
@@ -177,20 +165,15 @@ export function Contact() {
           >
             github.com/{profile.githubUsername}
           </a>
-          <p className="font-mono text-xs text-on-surface-variant/80">
-            {useApi
-              ? 'mode: api (Web3Forms) — gửi ngầm, không mở app email'
-              : 'mode: mailto — không cần key, hoạt động ngay sau docker build'}
-          </p>
           <div className="font-mono text-sm text-on-surface-variant space-y-2">
             <p>
               <span className="text-secondary">status:</span> available for internship
             </p>
             <p>
-              <span className="text-secondary">location:</span> Vietnam (open to remote)
+              <span className="text-secondary">location:</span> Vietnam · remote OK
             </p>
             <p>
-              <span className="text-secondary">response_time:</span> &lt; 48h
+              <span className="text-secondary">response:</span> &lt; 48h
             </p>
           </div>
         </motion.div>

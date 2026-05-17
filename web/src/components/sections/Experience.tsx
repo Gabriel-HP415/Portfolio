@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { GraduationCap } from 'lucide-react'
 import { coursework, education } from '../../data/experience'
 import { GlassCard } from '../ui/GlassCard'
 import { SectionHeader } from '../ui/SectionHeader'
@@ -10,15 +9,20 @@ export function Experience() {
       <SectionHeader
         label="Trajectory"
         title="Education & technical foundation"
-        description="A chronological mapping of academic foundations and specialized focus areas."
+        description="Academic background and specialized focus areas."
       />
 
       <GlassCard className="mb-10">
-        <div className="flex items-start gap-4">
-          <GraduationCap className="text-primary-container shrink-0 mt-1" size={28} />
+        <div className="flex flex-col sm:flex-row items-start gap-6">
+          <img
+            src={education.logo}
+            alt="UTH logo"
+            className="h-20 w-auto object-contain rounded-lg bg-surface-container-lowest/50 p-2"
+          />
           <div>
             <h3 className="font-display text-xl font-semibold text-on-surface">{education.degree}</h3>
-            <p className="text-secondary font-mono text-sm mt-1">{education.institution}</p>
+            <p className="text-on-surface mt-2 font-medium">{education.institution}</p>
+            <p className="text-secondary font-mono text-sm mt-1">{education.institutionShort}</p>
             <p className="text-on-surface-variant text-sm mt-2">
               {education.period} · {education.focus}
             </p>
@@ -42,15 +46,15 @@ export function Experience() {
         {[
           {
             title: 'Self-learning',
-            desc: 'Spring docs, system design primers, LeetCode patterns for backend interviews.',
+            desc: 'Spring Boot, system design, and backend interview preparation.',
           },
           {
             title: 'Hackathons',
-            desc: 'Rapid prototyping APIs under time constraints — prioritize MVP + clean commits.',
+            desc: 'Rapid API prototyping with clean commits and measurable demos.',
           },
           {
-            title: 'Certifications',
-            desc: 'Add Oracle Java, AWS Cloud Practitioner, or security certs when completed.',
+            title: 'Projects',
+            desc: 'Auth systems, REST APIs, and real-time messaging in coursework.',
           },
         ].map((item, i) => (
           <motion.div

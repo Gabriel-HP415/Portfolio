@@ -39,7 +39,9 @@ export const careerTimeline: TimelineItem[] = [
 
 export const education = {
   degree: 'Bachelor of Information Technology',
-  institution: 'University (Update with your school)',
+  institution: 'Trường Đại học Giao thông Vận tải TP.HCM',
+  institutionShort: 'UTH · HCMC',
+  logo: `${import.meta.env.BASE_URL}images/uth-logo.png`,
   period: '2021 — Present',
   focus: 'Software Engineering · Backend Systems',
 }
