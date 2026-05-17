@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Facebook, Github, Linkedin, Mail } from 'lucide-react'
 import { profile } from '../../data/profile'
 
 export function Footer() {
@@ -27,6 +27,16 @@ export function Footer() {
               className="flex items-center gap-2 font-mono text-sm text-on-surface-variant hover:text-primary-container transition-colors"
             >
               <Linkedin size={16} /> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href={profile.social.facebook}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 font-mono text-sm text-on-surface-variant hover:text-primary-container transition-colors"
+            >
+              <Facebook size={16} /> Facebook
             </a>
           </li>
           <li>

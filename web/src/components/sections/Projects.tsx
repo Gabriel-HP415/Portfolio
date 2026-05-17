@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import { useState } from 'react'
-import { projects, type Project } from '../../data/projects'
+import { projectThumbFallbacks, projects, type Project } from '../../data/projects'
 import { ProjectModal } from '../features/ProjectModal'
 import { SectionHeader } from '../ui/SectionHeader'
 
@@ -32,9 +32,18 @@ export function Projects() {
                 src={project.thumbnail}
                 alt={project.title}
                 loading="lazy"
+                onError={(e) => {
+                  const fallback = projectThumbFallbacks[project.id] ?? project.thumbnailFallback
+                  if (e.currentTarget.src !== fallback) e.currentTarget.src = fallback
+                }}
                 className="h-full w-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent" />
+              {project.inProgress && (
+                <span className="absolute top-3 right-3 rounded-full border border-secondary/40 bg-surface-container/90 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-secondary">
+                  Đang phát triển
+                </span>
+              )}
             </div>
             <div className="p-6">
               <h3 className="font-display text-xl font-semibold text-on-surface">{project.title}</h3>
@@ -50,14 +59,16 @@ export function Projects() {
                 ))}
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-outline-variant/40 px-4 py-2 text-sm hover:border-primary-container/50 hover:text-primary-container transition-colors"
-                >
-                  <Github size={16} /> GitHub
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-outline-variant/40 px-4 py-2 text-sm hover:border-primary-container/50 hover:text-primary-container transition-colors"
+                  >
+                    <Github size={16} /> GitHub
+                  </a>
+                )}
                 {project.demo && (
                   <a
                     href={project.demo}
@@ -95,6 +106,11 @@ export function Projects() {
               <img
                 src={project.thumbnail}
                 alt=""
+                loading="lazy"
+                onError={(e) => {
+                  const fallback = projectThumbFallbacks[project.id] ?? project.thumbnailFallback
+                  if (e.currentTarget.src !== fallback) e.currentTarget.src = fallback
+                }}
                 className="w-full sm:w-28 h-24 object-cover rounded-lg opacity-70"
               />
               <div>

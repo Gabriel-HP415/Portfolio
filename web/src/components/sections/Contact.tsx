@@ -165,6 +165,22 @@ export function Contact() {
           >
             github.com/{profile.githubUsername}
           </a>
+          <a
+            href={profile.social.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="font-mono text-sm text-on-surface-variant hover:text-primary-container transition-colors"
+          >
+            linkedin.com/in/phi-nong-hung-3727303a0
+          </a>
+          <a
+            href={profile.social.facebook}
+            target="_blank"
+            rel="noreferrer"
+            className="font-mono text-sm text-on-surface-variant hover:text-primary-container transition-colors"
+          >
+            facebook.com/nong.hungphi.412005
+          </a>
           <div className="font-mono text-sm text-on-surface-variant space-y-2">
             <p>
               <span className="text-secondary">status:</span> available for internship

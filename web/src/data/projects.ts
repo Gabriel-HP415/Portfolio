@@ -1,14 +1,19 @@
-import auraThumb from '../assets/projects/aura.svg'
-import carRentalThumb from '../assets/projects/car-rental.svg'
-import hydromateThumb from '../assets/projects/hydromate.svg'
+import auraThumbFallback from '../assets/projects/aura.svg'
+import carRentalThumbFallback from '../assets/projects/car-rental.svg'
+import hydromateThumbFallback from '../assets/projects/hydromate.svg'
+import realtimeChatThumbFallback from '../assets/projects/realtime-chat.svg'
+import skincareThumbFallback from '../assets/projects/skincare.svg'
+import { publicAsset } from '../lib/assetUrl'
 
 export type Project = {
   id: string
   title: string
   thumbnail: string
+  thumbnailFallback: string
   stack: string[]
-  github: string
+  github?: string
   demo?: string
+  inProgress?: boolean
   impact: string
   problem: string
   solution: string
@@ -19,15 +24,22 @@ export type Project = {
   featured?: boolean
 }
 
-const github = 'https://github.com/Gabriel-HP415'
+export const projectThumbFallbacks: Record<string, string> = {
+  aura: auraThumbFallback,
+  'car-rental': carRentalThumbFallback,
+  messzola: realtimeChatThumbFallback,
+  hydromate: hydromateThumbFallback,
+  skincare: skincareThumbFallback,
+}
 
 export const projects: Project[] = [
   {
     id: 'aura',
     title: 'AURA — Hệ thống Sàng lọc Sức khỏe Mạch máu Võng mạc',
-    thumbnail: auraThumb,
+    thumbnail: publicAsset('images/projects/aura.jpg'),
+    thumbnailFallback: auraThumbFallback,
     stack: ['Microservices', 'AI/ML', 'Java', 'Spring Boot', 'Docker'],
-    github,
+    github: 'https://github.com/IT-JuanDoo/AURA-Retinal-Screening-System',
     impact:
       'Hệ thống sàng lọc và phân tích sức khỏe mạch máu võng mạc sử dụng AI, được xây dựng với kiến trúc Microservices.',
     problem:
@@ -45,42 +57,87 @@ export const projects: Project[] = [
   },
   {
     id: 'car-rental',
-    title: '🚗 Website Thuê Xe Tự Lái Online',
-    thumbnail: carRentalThumb,
-    stack: ['Java', 'Spring Boot', 'React', 'MySQL'],
-    github,
+    title: '🚗 CarRental — Website Thuê Xe Tự Lái',
+    thumbnail: publicAsset('images/projects/car-rental.jpg'),
+    thumbnailFallback: carRentalThumbFallback,
+    stack: ['PHP', 'MySQL', 'Tailwind CSS', 'VNPAY'],
+    github: 'https://github.com/Gabriel-HP415/laptrinhweb',
     impact:
-      'Website quản lý cho thuê xe tự lái với đầy đủ chức năng đặt xe, thanh toán online và đánh giá.',
+      'Website cho thuê xe tự lái: đặt xe, thanh toán VNPAY, đánh giá; user vừa thuê vừa đăng xe cho thuê.',
     problem:
-      'Cửa hàng cho thuê cần một hệ thống thống nhất quản lý xe, đặt chỗ và thanh toán thay vì sổ sách và gọi điện.',
+      'Thiếu nền tảng tập trung cho đặt xe, kiểm tra trùng lịch và thanh toán; admin/host/user cần phân quyền rõ.',
     solution:
-      'Xây dựng API backend cho đội xe, đặt xe, thanh toán; frontend tìm kiếm, đặt lịch và module đánh giá.',
-    technologies: 'Spring Boot, JPA, MySQL, React, REST, phân quyền admin và khách hàng.',
-    challenges: 'Tránh trùng lịch đặt xe, mô hình hóa kỳ thuê và xác thực trạng thái thanh toán.',
-    results: 'Triển khai luồng chính: xem xe, đặt ngày, thanh toán online và đánh giá sau thuê.',
-    learned: 'Mô hình nghiệp vụ (lịch trống + vòng đời booking) quan trọng hơn CRUD đơn thuần.',
+      'CarRental (đồ án Lập trình Web): module client, host dashboard, admin; kiểm tra lịch realtime, tự hủy đơn chưa thanh toán.',
+    technologies:
+      'PHP 7.4+, MySQL, Tailwind CSS, JavaScript, VNPAY Sandbox, FullCalendar, Chart.js, Apache/XAMPP.',
+    challenges:
+      'Trùng lịch đặt xe, upload nhiều ảnh/xe, session auth và phân quyền user/host/admin.',
+    results:
+      'Luồng đầy đủ: tìm xe → đặt → VNPAY → đánh giá; host quản lý xe & doanh thu; admin giám sát hệ thống.',
+    learned: 'Mô hình booking + payment state machine quan trọng hơn CRUD đơn thuần trên PHP thuần.',
+    featured: true,
+  },
+  {
+    id: 'messzola',
+    title: '💬 MessZola — App Nhắn Tin Real-Time',
+    thumbnail: publicAsset('images/projects/messzola.jpg'),
+    thumbnailFallback: realtimeChatThumbFallback,
+    stack: ['Node.js', 'Express', 'WebSocket', 'WebRTC'],
+    github: 'https://github.com/Gabriel-HP415/laptrinhmang-CuoiKy',
+    impact:
+      'Ứng dụng chat thời gian thực (đồ án Lập trình Mạng): nhắn 1-1/nhóm, gọi video, gửi file, typing indicator.',
+    problem:
+      'Cần demo đầy đủ kiến thức mạng: HTTP REST, WebSocket, peer connection và lưu trữ tin nhắn bền vững.',
+    solution:
+      'MessZola: backend Express + WS + WebRTC; frontend SPA; sql.js (SQLite in-memory + file persistence).',
+    technologies:
+      'Node.js, Express, WebSocket, WebRTC, JWT, sql.js, HTML/CSS/JS, kiến trúc feature-based (server/web).',
+    challenges:
+      'Reconnect WS, đồng bộ room/chat, signaling cho gọi video nhiều người và cache UX phía client.',
+    results:
+      'Chat 1-1/nhóm, quản lý bạn bè, gọi video (mic/camera/screen share), gửi file trong khung chat.',
+    learned: 'Real-time app cần tách rõ REST, WS events và RTC signaling — contract rõ từng kênh.',
     featured: true,
   },
   {
     id: 'hydromate',
     title: '💧 HydroMate — Nhắc nhở & Theo dõi Uống nước',
-    thumbnail: hydromateThumb,
+    thumbnail: publicAsset('images/projects/hydromate.jpg'),
+    thumbnailFallback: hydromateThumbFallback,
     stack: ['Kotlin', 'Android', 'Room', 'MVVM'],
-    github,
+    github: 'https://github.com/JunnDung/HydroMate',
     demo: 'https://www.figma.com/design/JN0qfdtBa8DQmStykPkG8H/LTTBDiDong?node-id=0-1',
     impact:
-      'Ứng dụng Android (Kotlin) nhắc nhở uống nước thông minh, theo dõi lượng nước và gợi ý mục tiêu theo cá nhân — đồ án tốt nghiệp.',
+      'Ứng dụng Android (Kotlin) nhắc nhở uống nước thông minh, theo dõi lượng nước và gợi ý mục tiêu — đồ án LTTBĐ.',
     problem:
-      'Người dùng khó duy trì thói quen uống đủ nước; app báo thức thông thường không thích ứng thói quen hay hiển thị tiến độ rõ ràng.',
+      'Người dùng khó duy trì thói quen uống đủ nước; app báo thức thông thường không thích ứng thói quen.',
     solution:
-      'Ứng dụng Kotlin: nhắc nhở theo lịch, ghi nhận lượng nước (cốc/chai), biểu đồ ngày/tuần/tháng và gợi ý mục tiêu theo cân nặng, tuổi, giới.',
+      'Nhắc nhở theo lịch, ghi nhận lượng nước, biểu đồ ngày/tuần/tháng, gợi ý mục tiêu theo profile.',
     technologies:
-      'Kotlin, Android SDK, Room/SQLite, MVVM, Notification, Material UI theo thiết kế Figma.',
-    challenges:
-      'Thông báo nền ổn định, lưu lịch sử lâu dài và quản lý state cho biểu đồ thống kê.',
+      'Kotlin, Android SDK, Room/SQLite, MVVM, Notification, Material UI theo Figma.',
+    challenges: 'Thông báo nền ổn định, lưu lịch sử và state cho biểu đồ thống kê.',
     results:
-      'Hoàn thành phạm vi đồ án: nhắc nhở, dashboard theo dõi, gợi ý lượng nước và tin nhắn động viên.',
-    learned: 'Ứng dụng mobile cần thiết kế dữ liệu local vững trước khi thêm tính năng “thông minh”.',
+      'Hoàn thành đồ án nhóm: nhắc nhở, dashboard, gợi ý lượng nước và tin nhắn động viên.',
+    learned: 'Mobile cần thiết kế dữ liệu local vững trước khi thêm tính năng “thông minh”.',
+    featured: true,
+  },
+  {
+    id: 'skincare',
+    title: '🧴 Skin Care Service Management System',
+    thumbnail: publicAsset('images/projects/skincare.jpg'),
+    thumbnailFallback: skincareThumbFallback,
+    stack: ['Java', 'Spring Boot', 'MySQL', 'REST'],
+    inProgress: true,
+    impact:
+      'Hệ thống quản lý dịch vụ chăm sóc da: lịch hẹn, gói dịch vụ, khách hàng và nhân viên — đang phát triển.',
+    problem:
+      'Spa/clinic cần một hệ thống thống nhất thay vì sổ hẹn và Excel cho khách, dịch vụ và lịch làm việc.',
+    solution:
+      'Thiết kế module quản lý dịch vụ, đặt lịch, hồ sơ khách và phân quyền staff/admin (đang triển khai).',
+    technologies: 'Spring Boot, MySQL, REST API, JPA — kiến trúc backend-first.',
+    challenges: 'Mô hình lịch hẹn trùng ca, gói dịch vụ combo và workflow trạng thái đơn dịch vụ.',
+    results: 'Đã hoàn thành phần thiết kế & scaffold; các module nghiệp vụ đang được bổ sung.',
+    learned: 'Ưu tiên domain model (appointment + service catalog) trước khi làm UI chi tiết.',
     featured: true,
   },
 ]

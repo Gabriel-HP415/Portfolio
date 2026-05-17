@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1528"/>
+      <stop offset="100%" stop-color="#0d1c2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="300" r="100" fill="#cebdff" fill-opacity="0.15" stroke="#cebdff" stroke-opacity="0.5"/>
+  <rect x="520" y="200" width="160" height="200" rx="80" fill="#7dd3fc" fill-opacity="0.2"/>
+  <text x="600" y="480" text-anchor="middle" fill="#cebdff" font-family="monospace" font-size="28">Skin Care · WIP</text>
+  <text x="600" y="530" text-anchor="middle" fill="#bec8ce" font-family="monospace" font-size="20">Service Management</text>
+</svg>

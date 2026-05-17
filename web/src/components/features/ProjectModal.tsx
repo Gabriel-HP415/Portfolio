@@ -42,7 +42,14 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             >
               <X size={22} />
             </button>
-            <h3 className="font-display text-2xl font-semibold text-on-surface pr-8">{project.title}</h3>
+            <div className="flex flex-wrap items-center gap-3 pr-8">
+              <h3 className="font-display text-2xl font-semibold text-on-surface">{project.title}</h3>
+              {project.inProgress && (
+                <span className="rounded-full border border-secondary/40 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-secondary">
+                  Đang phát triển
+                </span>
+              )}
+            </div>
             <p className="mt-2 font-mono text-sm text-primary-container">{project.impact}</p>
             <div className="mt-6 space-y-5">
               {fields.map(([label, key]) => (

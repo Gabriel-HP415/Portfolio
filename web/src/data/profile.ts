@@ -11,7 +11,8 @@ export const profile = {
   email: 'nonghungphi412005@gmail.com',
   githubUsername: 'Gabriel-HP415',
   github: 'https://github.com/Gabriel-HP415',
-  linkedin: 'https://linkedin.com/in/nonghungphi',
+  linkedin: 'https://www.linkedin.com/in/phi-nong-hung-3727303a0/',
+  facebook: 'https://www.facebook.com/nong.hungphi.412005',
   cvPath: `${import.meta.env.BASE_URL}cv-nong-hung-phi.pdf`,
   typingPhrases: [
     'Building scalable backend systems.',
@@ -20,7 +21,8 @@ export const profile = {
   ],
   social: {
     github: 'https://github.com/Gabriel-HP415',
-    linkedin: 'https://linkedin.com/in/nonghungphi',
+    linkedin: 'https://www.linkedin.com/in/phi-nong-hung-3727303a0/',
+    facebook: 'https://www.facebook.com/nong.hungphi.412005',
     email: 'mailto:nonghungphi412005@gmail.com',
   },
 } as const
