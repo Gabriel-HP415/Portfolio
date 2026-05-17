@@ -7,7 +7,7 @@ export const profile = {
   githubUsername: 'Gabriel-HP415',
   github: 'https://github.com/Gabriel-HP415',
   linkedin: 'https://linkedin.com/in/nonghungphi',
-  cvPath: '/cv-nong-hung-phi.pdf',
+  cvPath: `${import.meta.env.BASE_URL}cv-nong-hung-phi.pdf`,
   typingPhrases: [
     'Building scalable backend systems.',
     'Learning distributed systems.',
