@@ -15,7 +15,7 @@ export function Hero() {
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex w-full flex-col items-start gap-6 lg:w-1/2"
+        className="flex w-full min-w-0 flex-col items-start gap-6 lg:w-1/2 lg:max-w-none"
       >
         <span className="text-label-caps rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1 text-secondary">
           Backend Engineer Portfolio
@@ -29,7 +29,7 @@ export function Hero() {
           {profile.role}
         </p>
 
-        <div className="relative max-w-lg w-full border-l-2 border-primary-container pl-4 min-h-[5.5rem] sm:min-h-[3.25rem]">
+        <div className="relative w-full max-w-2xl border-l-2 border-primary-container pl-4 min-h-[5.5rem] sm:min-h-[3.25rem]">
           <p
             className="text-lg leading-snug text-on-surface-variant invisible select-none pointer-events-none"
             aria-hidden="true"
@@ -53,9 +53,9 @@ export function Hero() {
           </Button>
         </div>
 
-        <p className="flex items-center gap-2 font-mono text-sm text-on-surface-variant max-w-lg">
-          <Terminal size={16} className="text-primary-container shrink-0" />
-          <span>
+        <p className="flex w-full max-w-2xl items-start gap-2 font-mono text-sm leading-relaxed text-on-surface-variant">
+          <Terminal size={16} className="mt-0.5 shrink-0 text-primary-container" />
+          <span className="min-w-0 flex-1">
             {profile.major} · Focused on APIs, databases &amp; scalable architecture
           </span>
         </p>
