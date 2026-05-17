@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import { useState } from 'react'
+import realtimeChatThumb from '../../assets/projects/realtime-chat.svg'
 import { projects, type Project } from '../../data/projects'
 import { ProjectModal } from '../features/ProjectModal'
 import { SectionHeader } from '../ui/SectionHeader'
@@ -27,12 +28,17 @@ export function Projects() {
             transition={{ delay: i * 0.1 }}
             className="group glass rounded-xl overflow-hidden hover:border-primary-container/40 transition-all duration-300"
           >
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-48 overflow-hidden bg-surface-container-low">
               <img
                 src={project.thumbnail}
                 alt={project.title}
                 loading="lazy"
-                className="h-full w-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  if (project.id === 'realtime-chat') {
+                    e.currentTarget.src = realtimeChatThumb
+                  }
+                }}
+                className="h-full w-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent" />
             </div>

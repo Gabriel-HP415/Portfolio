@@ -1,3 +1,5 @@
+import realtimeChatThumb from '../assets/projects/realtime-chat.svg'
+
 export type Project = {
   id: string
   title: string
@@ -55,7 +57,7 @@ export const projects: Project[] = [
   {
     id: 'realtime-chat',
     title: 'Real-Time Messaging API',
-    thumbnail: `${import.meta.env.BASE_URL}images/projects/realtime-chat.svg`,
+    thumbnail: realtimeChatThumb,
     stack: ['Spring Boot', 'WebSocket', 'MySQL'],
     github: 'https://github.com/Gabriel-HP415',
     impact: 'Delivered sub-200ms message delivery for 50 concurrent WebSocket sessions.',

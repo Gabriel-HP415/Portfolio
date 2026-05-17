@@ -1,3 +1,4 @@
+import { publicAsset } from '../lib/assetUrl'
 import { profile } from './profile'
 
 export type TimelineItem = {
@@ -43,7 +44,7 @@ export const education = {
   degree: profile.degree,
   institution: profile.university,
   institutionEn: profile.universityEn,
-  logo: `${import.meta.env.BASE_URL}images/uth-logo.png`,
+  logo: publicAsset('images/uth-logo.png'),
   period: `${profile.studyStartYear} — Present`,
   focus: 'Software Engineering · Backend Systems',
 }
