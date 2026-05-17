@@ -18,6 +18,39 @@ docker compose up -d --build
 
 Open http://localhost:8080
 
+## Vercel (khuyên dùng — vercel.app)
+
+Deploy miễn phí, URL dạng `https://portfolio-xxx.vercel.app`, tự build mỗi lần push.
+
+### Cách 1 — Import từ GitHub (dễ nhất)
+
+1. Đăng nhập [vercel.com](https://vercel.com) → **Add New Project**
+2. Import repo **Gabriel-HP415/Portfolio**
+3. **Root Directory:** để trống (repo root) — file `vercel.json` đã cấu hình build thư mục `web/`
+4. **Environment Variables** (tùy chọn): `VITE_WEB3FORMS_ACCESS_KEY` = access key Web3Forms
+5. **Deploy** → xong trong ~1 phút
+
+### Cách 2 — CLI
+
+```bash
+npm i -g vercel
+cd D:\NHP\Portfolio\Portfolio
+vercel
+```
+
+Lần đầu chọn link GitHub account; production: `vercel --prod`.
+
+### Lưu ý
+
+| Nền tảng | Base URL |
+|----------|----------|
+| **Vercel** | `/` (domain gốc, không cần `/Portfolio/`) |
+| **GitHub Pages** | `/Portfolio/` (workflow đã set `VITE_BASE_PATH`) |
+
+Có thể dùng **cả hai**: Vercel cho link chính gửi recruiter, GitHub Pages làm backup.
+
+---
+
 ## GitHub Pages (chạy trên web GitHub)
 
 **URL sau khi bật:** https://gabriel-hp415.github.io/Portfolio/

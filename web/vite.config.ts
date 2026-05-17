@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// GitHub Pages: https://gabriel-hp415.github.io/Portfolio/
-// Set VITE_BASE_PATH=/Portfolio/ in CI; local dev uses /
+// Vercel: base `/` (default)
+// GitHub Pages: set VITE_BASE_PATH=/Portfolio/ in GitHub Actions only
 const base = process.env.VITE_BASE_PATH || '/'
 
 export default defineConfig({
