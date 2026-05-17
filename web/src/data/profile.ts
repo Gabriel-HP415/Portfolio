@@ -1,7 +1,11 @@
 export const profile = {
   name: 'Nong Hung Phi',
   role: 'Backend Developer Intern',
-  major: 'Information Technology',
+  major: 'Công nghệ Thông tin',
+  university: 'TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI TP.HCM',
+  universityShort: 'UTH · HCMC',
+  universityEn: 'University of Transport Ho Chi Minh City',
+  degree: 'Cử nhân Công nghệ Thông tin',
   tagline: 'BACKEND_PORTFOLIO',
   email: 'nonghungphi412005@gmail.com',
   githubUsername: 'Gabriel-HP415',

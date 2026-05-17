@@ -21,8 +21,9 @@ export function Experience() {
           />
           <div>
             <h3 className="font-display text-xl font-semibold text-on-surface">{education.degree}</h3>
-            <p className="text-on-surface mt-2 font-medium">{education.institution}</p>
-            <p className="text-secondary font-mono text-sm mt-1">{education.institutionShort}</p>
+            <p className="text-on-surface-variant text-sm mt-1">{education.degreeEn}</p>
+            <p className="text-on-surface mt-3 font-medium leading-snug">{education.institution}</p>
+            <p className="text-secondary font-mono text-sm mt-1">{education.institutionEn}</p>
             <p className="text-on-surface-variant text-sm mt-2">
               {education.period} · {education.focus}
             </p>

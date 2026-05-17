@@ -1,3 +1,5 @@
+import { profile } from './profile'
+
 export type TimelineItem = {
   year: string
   title: string
@@ -8,39 +10,48 @@ export type TimelineItem = {
 
 export const careerTimeline: TimelineItem[] = [
   {
+    year: '2021',
+    title: profile.universityShort,
+    subtitle: profile.major,
+    description: `Began ${profile.degree} at ${profile.universityEn}.`,
+    type: 'education',
+  },
+  {
     year: '2022',
     title: 'IT Foundation',
     subtitle: 'Core CS fundamentals',
-    description: 'Mastered OOP, data structures, and programming discipline through structured coursework.',
+    description: 'OOP, data structures, and programming discipline through coursework at UTH.',
     type: 'education',
   },
   {
     year: '2023',
     title: 'Backend Focus',
     subtitle: 'Java & Spring Boot',
-    description: 'Shifted toward server-side development, REST APIs, and relational database design.',
+    description: 'Server-side development, REST APIs, and relational database design.',
     type: 'learning',
   },
   {
     year: '2024',
     title: 'Production-Style Projects',
     subtitle: 'Auth, APIs, real-time',
-    description: 'Built full-stack features with measurable performance and security requirements.',
+    description: 'Built features with measurable performance and security requirements.',
     type: 'project',
   },
   {
     year: '2025',
     title: 'Internship Ready',
     subtitle: 'Backend Developer Intern',
-    description: 'Targeting roles where I can contribute to scalable services and learn from senior engineers.',
+    description: 'Targeting backend intern roles with scalable services and clean architecture.',
     type: 'cert',
   },
 ]
 
 export const education = {
-  degree: 'Bachelor of Information Technology',
-  institution: 'Trường Đại học Giao thông Vận tải TP.HCM',
-  institutionShort: 'UTH · HCMC',
+  degree: 'Cử nhân Công nghệ Thông tin',
+  degreeEn: 'Bachelor of Information Technology',
+  institution: profile.university,
+  institutionShort: profile.universityShort,
+  institutionEn: profile.universityEn,
   logo: `${import.meta.env.BASE_URL}images/uth-logo.png`,
   period: '2021 — Present',
   focus: 'Software Engineering · Backend Systems',
