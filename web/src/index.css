@@ -106,3 +106,76 @@
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
+
+/* NHP System Guide */
+@keyframes system-guide-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes system-guide-ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+@keyframes system-guide-dot-pulse {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.system-guide-core {
+  animation: system-guide-breathe 4s ease-in-out infinite;
+}
+
+.system-guide-core--active {
+  animation-duration: 3s;
+}
+
+.system-guide-ring {
+  animation: system-guide-ring-pulse 2.8s ease-out infinite;
+}
+
+.system-guide-ring--delay {
+  animation-delay: 1.2s;
+}
+
+.system-guide-dot {
+  animation: system-guide-dot-pulse 1.2s ease-in-out infinite;
+}
+
+.system-guide-dot--2 {
+  animation-delay: 0.15s;
+}
+
+.system-guide-dot--3 {
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .system-guide-core,
+  .system-guide-ring,
+  .system-guide-dot {
+    animation: none;
+  }
+}

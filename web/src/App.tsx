@@ -2,6 +2,7 @@ import { AmbientBackground } from './components/layout/AmbientBackground'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
 import { ScrollProgress } from './components/layout/ScrollProgress'
+import { SystemGuide } from './components/features/SystemGuide/SystemGuide'
 import { ThemeToggle } from './components/features/ThemeToggle'
 import { About } from './components/sections/About'
 import { Approach } from './components/sections/Approach'
@@ -20,6 +21,7 @@ export default function App() {
       <AmbientBackground />
       <Navbar />
       <ThemeToggle />
+      <SystemGuide />
 
       <main className="relative z-10 mx-auto max-w-[1200px] px-6">
         <Hero />
